@@ -1,0 +1,41 @@
+
+
+<div *ngIf="isLoading">
+  <zi-loader></zi-loader>
+</div>
+
+<div class="container">
+
+  <div class="container-main">
+
+    <div class="container-form">
+
+      <div class="logo-container" >
+        <img src="https://www.zoominfo.com/ge-assets/images/logos/zoominfo-new-logo.svg" alt="ZoomInfo">
+
+        <p class="comment">Good Luck</p>
+      </div>
+
+
+
+      <form (ngSubmit)="submit()" [formGroup]="formGroup">
+        <p class="err-message" *ngIf="errorFromResp">{{errorFromResp}}</p>
+
+        <div class="input-container username">
+          <input [formControlName]="'username'" [placeholder]="'Username'" class="input">
+        </div>
+
+        <div class="input-container password">
+          <input type="password" [formControlName]="'password'" [placeholder]="'Password'" class="input">
+        </div>
+
+        <zi-button class="submit-button" [disabled]="isLoading">
+          Submit
+        </zi-button>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

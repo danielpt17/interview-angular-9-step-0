@@ -1,0 +1,19 @@
+<div *ngIf="showPagination">
+  <ul class="pagination">
+    <li *ngIf="showPrevBtn">
+      <a class="pagination-arrow" (click)="goToPreviousPage()">
+        <i> < </i>
+      </a>
+    </li>
+
+    <li *ngFor="let page of pages" [ngClass]="{active: page == curPage}" (click)="goToPage(page)">
+      <a>{{page}}</a>
+    </li>
+
+    <li *ngIf="showNextBtn">
+      <a class="pagination-arrow" (click)="goToNextPage()">
+        <i> > </i>
+      </a>
+    </li>
+  </ul>
+</div>

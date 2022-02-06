@@ -1,0 +1,15 @@
+<div class="container"
+  *ngIf="{members: members$ | async, selectedMemberHierarchy: selectedMemberHierarchy$ | async, loadingMembers: loadingMembers$ | async} as state">
+  <div class="container-top">
+    <h1 class="header">{{selectedMember?.name ? selectedMember?.name : 'Please select a member'}}</h1>
+  </div>
+
+  <div class="container-bottom">
+    <zi-list (itemSelected)="memberSelected($event)" [showLoader]="state.loadingMembers" [selectedItem]="selectedMember"
+      [headerText]="'Members'" [items]="state.members">
+    </zi-list>
+    <app-hierarchy *ngIf="selectedMember" (hierarchyItemSelected)="onSelectedHierarchyMember($event)"
+      [hierarchy]="state.selectedMemberHierarchy"></app-hierarchy>
+  </div>
+
+</div>

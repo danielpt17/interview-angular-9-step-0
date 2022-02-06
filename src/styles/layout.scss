@@ -1,0 +1,14 @@
+/// A convenient way to use flex
+/// @param $justify-content [flex-start] - Justify Content
+/// @param $align-items [stretch] - Align Items
+/// @param $flex-wrap [nowrap] - Flex wrap
+/// @param $flex-direction [row] - Flex direction
+/// @example
+///   @include flex(flex-start,stretch, nowrap, column) {
+@mixin flex($justify-content:flex-start, $align-items: stretch, $flex-wrap: nowrap, $flex-direction: row, $display: flex) {
+  display: $display;
+  flex-wrap: $flex-wrap;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+}

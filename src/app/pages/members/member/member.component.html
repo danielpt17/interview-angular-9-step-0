@@ -1,0 +1,31 @@
+<div class="loader-container" *ngIf="isLoading">
+    <zi-loader></zi-loader>
+</div>
+<div *ngIf="!isLoading" class="container">
+    <div class="container-left">
+        <zi-button class="logout-btn" (click)="backClick()">
+            Back
+        </zi-button>
+    </div>
+    <div class="container-right" *ngIf="member; else noData">
+        <div class="top-container">
+            <div class="img-container">
+                <img src="https://www.seekpng.com/png/detail/110-1100707_person-avatar-placeholder.png"
+                    alt="Person - Avatar Placeholder@seekpng.com">
+            </div>
+            <div class="header-container">
+                {{member.id}} - {{member.name}}
+            </div>
+        </div>
+        <div class="bottom-container">
+            <p [innerHTML]="member.description"></p>
+        </div>
+    </div>
+</div>
+
+<ng-template #noData>
+    <div class="error-container">
+        Oops, you are not authorized to see this members details. Please go back to the main page and try somebody else.
+    </div>
+
+</ng-template>

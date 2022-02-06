@@ -1,0 +1,28 @@
+@import "./font";
+@import "./variables";
+@import "./colors";
+
+/**
+* Mixin for retina media query.
+*/
+@mixin retina {
+  @media
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for link style.
+ */
+@mixin link-style($link-size: $font-base, $link-color: $link-color, $weight: $font-weight-thin) {
+  cursor: pointer;
+  @include font-style($size: $link-size,
+  $color: $link-color, $weight: $weight);
+}
+
+@mixin font-style-default {
+  @include font-style($font-small, $main-text, $font-weight-base);
+}

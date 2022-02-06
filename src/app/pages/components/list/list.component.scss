@@ -1,0 +1,45 @@
+@import "../../../../styles/base";
+
+%selected {
+  background: $green-color;
+}
+
+:host {
+  border: 1px solid $main-border-color;
+  border-radius: 3px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &-header {
+    text-align: center;
+    border-bottom: 1px solid $main-border-color;
+  }
+  &-items {
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+
+    .item {
+      cursor: pointer;
+      padding: 7px 0 7px 15px;
+
+      &:hover {
+        @extend %selected;
+      }
+    }
+  }
+}
+
+.selected {
+  @extend %selected;
+}
+
+:host(.members) {
+  min-height: 350px;
+  max-height: 500px;
+  overflow: scroll;
+}

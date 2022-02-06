@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="hierarchy-container">
+        <span *ngFor="let hier of hierarchy;let i = index">
+            <a (click)="selectItem(hier)">{{hier}}{{i === hierarchy.length-1 ? ' ' : ' ->'}}</a>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+@import "../../../../styles/base";
+
+button {
+  @include font-style(16px, $white, 400);
+  @include flex(center, center);
+  background-color: $button-bg-main-color;
+  border-radius: 4px;
+  height: 40px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background .3s;
+  img {
+    height: 15px;
+    width: 15px;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+  &[disabled] {
+    background: $button-main-bg-color-disabled;
+    pointer-events: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: $white;
+    border: 2px solid $button-bg-main-color;
+    color: $button-bg-main-color;
+  }
+}

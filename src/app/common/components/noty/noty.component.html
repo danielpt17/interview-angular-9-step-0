@@ -1,0 +1,17 @@
+
+<div class="noty" *ngIf="message">
+
+  <div class="noty-message {{ getMessageProperties(message.type).styleClass }}">
+
+    <div class="noty-message-container">
+      <div class="noty-message-container-main">
+        <img class="noty-message-container-main-icon" *ngIf="getMessageProperties(message.type).imageSrc" [src]="getMessageProperties(message.type).imageSrc" alt="error">
+        <p class="noty-message-container-main-content" [innerHTML]="message.content"></p>
+      </div>
+      <span class="noty-message-container-close" (click)="deleteMessage()">&times;</span>
+    </div>
+
+  </div>
+
+</div>
+

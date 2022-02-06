@@ -1,0 +1,54 @@
+@import "../../../../styles/base";
+:host {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+
+  .pagination {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+    margin: 4px;
+
+    li {
+      display: inline-block;
+
+      >a {
+        @include font-style($font-large, $main-text, $font-weight-normal);
+        cursor: pointer;
+        text-decoration: none;
+        width: 18px;
+        background-color: transparent;
+        text-align: left;
+        padding: initial;
+        margin-right: 18px;
+
+        &:hover {
+          @include font-style($font-large, $hover-active-color, $font-weight-normal);
+          text-decoration: underline;
+        }
+
+        &.pagination-arrow {
+          @include font-style($font-large, $icon-color-regular, $font-weight-semi-bold);
+          width: 10px;
+
+          i {
+            margin: 0 5px;
+            font-size: $font-small;
+          }
+        }
+      }
+
+      &.active {
+        width: 18px;
+        margin: 0 4px;
+
+        a {
+          @include font-style($font-large, $primary-active-color, $font-weight-semi-bold);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

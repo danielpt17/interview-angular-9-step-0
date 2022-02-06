@@ -1,0 +1,7 @@
+mat-dialog-container {
+
+  // allow content to overflow outside of the dialog
+  .content-overflow & {
+    overflow: initial;
+  }
+}

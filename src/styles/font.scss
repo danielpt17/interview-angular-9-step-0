@@ -1,0 +1,185 @@
+@import "./colors";
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+////
+
+/// Represents default font-face in the system
+$font-family: 'Sharp Sans', 'Sharp Sans Semibold', sans-serif;
+
+/// Represents a extra small size of a font in the system
+$font-xsmall: 10px;
+
+/// Represents a small size of a font in the system
+$font-small: 12px;
+
+/// Represents default color of texts in the system
+$font-base: 13px;
+
+/// Represents a large size of a font in the system
+$font-medium: 14px;
+
+/// Represents a extra large size of a font in the system
+$font-large: 16px;
+
+/// Represents a extra extra large size of a font in the system
+$font-xlarge: 18px;
+
+/// Represents a XXL large size of a font in the system
+$font-xxlarge: 20px;
+
+/// Represents a 3XL large size of a font in the system
+$font-3xlarge: 22px;
+
+/// Represents a 4XL large size of a font in the system
+$font-4xlarge: 24px;
+
+/// Represents the thin font weight in the system
+$font-weight-thin: 300 !default;
+
+/// Represents the normal font weight in the system
+$font-weight-base: $font-weight-thin !default;
+
+/// Represents the norm font weight in the system
+$font-weight-normal: 400 !default;
+
+/// Represents the semi font weight in the system
+$font-weight-semi-bold: 600 !default;
+
+/// Represents the bold font weight in the system
+$font-weight-bold: 700 !default;
+
+/// Needed to be used whenever The default properties of a font are changed
+/// @param {Number} $size [] - The size of the desired font (=font-size)
+/// @param {Color} $color [$font-color] - The color of the desired font (=color).
+/// @param {Number} $weight [$font-weight-thin] - The weight of the font (=font-weight)
+/// @param {String} $family [$font-family] - The desired font face (=font-family)
+/// @example
+///   @include font-style(12px, black, 400, 'Open Sans')
+@mixin font-style($size:$font-base, $color:$main-text, $weight:$font-weight-normal, $family: $font-family) {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}
+
+ //To be used on all dialog content titles
+@mixin dialog-title($size: $font-large, $color: $main-text, $weight: $font-weight-semi-bold) {
+  @include font-style($size, $color, $weight);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(https://fonts.gstatic.com/s/opensans/v13/EInbV5DfGHOiMmvb1Xr-hugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxolIZu-HDpmDIZMigmsroc4.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxnibbpXgLHK_uTT48UMyjSM.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('/assets/fonts/SharpSans.otf');
+  src: url('/assets/fonts/SharpSans.otf');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('/assets/fonts/SharpSans.otf');
+  src: url('/assets/fonts/SharpSans.otf');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('/assets/fonts/SharpSans-book.otf');
+  src: url('/assets/fonts/SharpSans-book.otf');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('/assets/fonts/SharpSans-medium.otf');
+  src: url('/assets/fonts/SharpSans-medium.otf');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('/assets/fonts/SharpSans-semibold.otf');
+  src: url('/assets/fonts/SharpSans-semibold.otf');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('/assets/fonts/SharpSans-bold.otf');
+  src: url('/assets/fonts/SharpSans-bold.otf');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}

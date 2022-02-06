@@ -1,0 +1,19 @@
+@import "colors";
+
+
+$main-border-color: rgba(151,151,151,0.5);
+$hover-active-color: $blue-chill;
+$main-text: $outer-space;
+$icon-color-regular: $blue-bayoux;
+$primary-active-color: $cerulean;
+$button-bg-main-color: $buttons-red-color;
+$button-main-bg-color-disabled: lighten($buttons-red-color, 0.9);
+$noty-info-bg: $white-ice;
+$noty-warning-bg: $pearl-lusta;
+$noty-error-bg: $bizarre;
+$noty-success-bg: $peppermint;
+$noty-default-bg: $wild-sand;
+$noty-success-icon: $apple;
+
+// margins
+$distance-from-nav-bar: 30px;

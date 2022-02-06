@@ -1,0 +1,92 @@
+@import '../../../../styles/base';
+
+
+.noty {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+
+  &-message {
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+    animation: fadeIn .3s;
+    transition: background-color .3s;
+
+    &-container {
+      position: relative;
+      // for webkit browsers
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        @include flex(center, center);
+      }
+      width: 90%;
+      margin: 0 auto;
+
+      &-close {
+        // for IE 10, 11
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          top: 2px;
+        }
+
+        cursor: pointer;
+        @media screen and (min-width: 800px) {
+          position: absolute;
+          right: 20px;
+          cursor: pointer;
+        }
+      }
+
+      &-main {
+        @include flex(center, center);
+        margin: 0 auto;
+
+        &-icon {
+          margin-right: 15px;
+        }
+
+        &-content {
+          @include font-style($font-base, $outer-space, $font-weight-normal);
+          text-align: center;
+          width: 90%;
+          @media screen and (min-width: 800px) {
+            width: 100%;
+            margin: 0 auto 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// All Noty messages option designs.
+.noty-message.info {
+  background-color: $noty-info-bg;
+}
+
+.noty-message.success {
+  background-color: $noty-success-bg;
+}
+
+.noty-message.warning {
+  background-color: $noty-warning-bg;
+}
+
+.noty-message.error {
+  background-color: $noty-error-bg;
+}
+
+.noty-message.default {
+  background: $noty-default-bg;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
